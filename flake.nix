@@ -1,5 +1,5 @@
 {
-  description = "Configurations for Ian's 2022 MacBook Pro.";
+  description = "Configurations for Ian's Darwin machines.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -21,6 +21,12 @@
       mkSystem = igm.lib.mkDarwinSystem;
     in
     {
+      darwinConfigurations."ian-mbp-intel" = mkSystem {
+        computerName = "Ian’s Macbook Pro Intel";
+        hostName = "ian-mbp-intel";
+        additionalOverlays = private.overlays;
+        modules = private.modules;
+      };
       darwinConfigurations."ian-mbp-2022" = mkSystem {
         isM1 = true;
         computerName = "Ian’s Macbook Pro 2022";
