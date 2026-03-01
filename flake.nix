@@ -9,6 +9,7 @@
     };
     dotfiles-private-raw = {
       url = "git+file:///Users/igm/dotfiles-private";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
