@@ -8,11 +8,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1772446078,
-        "narHash": "sha256-9NZVQwsHxSZHsOTunHoT1khIa5cW/zZ3X5wnLT845Cs=",
+        "lastModified": 1772446285,
+        "narHash": "sha256-QGywyv7jLRxdGTPoWf1yr/TxPnD7IZWg9E8PaXrLtyE=",
         "owner": "macalinao",
         "repo": "additional-nix-packages",
-        "rev": "1de97da1ba9df0d2137aad24b66be7558e56eb8f",
+        "rev": "5289cdd3c3f8b2a05862649f67913fa6f7285034",
         "type": "github"
       },
       "original": {
@@ -386,11 +386,11 @@
       },
       "locked": {
         "dir": "nix",
-        "lastModified": 1772446164,
-        "narHash": "sha256-0WGqTlyNnlitGw2FsQmzulKIX3FIjaILypYs77bMnIg=",
+        "lastModified": 1772446309,
+        "narHash": "sha256-Ie1JF1hTkXHJj+VdThY6gHNo3Whga4bmIWtGCf//eOw=",
         "ref": "refs/heads/master",
-        "rev": "929215b658847b0845686e852fc8c205a17c23e6",
-        "revCount": 1734,
+        "rev": "aff23a640b567b23694b1d3eb04c695a061353a2",
+        "revCount": 1735,
         "type": "git",
         "url": "file:///Users/igm/dotfiles"
       },
