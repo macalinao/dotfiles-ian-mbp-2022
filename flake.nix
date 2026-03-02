@@ -9,7 +9,6 @@
     };
     dotfiles-private-raw = {
       url = "git+file:///Users/igm/dotfiles-private";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -22,8 +21,7 @@
       hmSecrets = {
         home-manager.users.igm = {
           imports = [
-            dotfiles-private-raw.homeManagerModules.age
-            dotfiles-private-raw.homeManagerModules.default
+            dotfiles-private-raw.homeModules.default
           ];
         };
       };
