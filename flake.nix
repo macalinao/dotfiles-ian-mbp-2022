@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     igm = {
-      url = "git+file:///Users/igm/dotfiles?dir=nix";
+      url = "git+file:///Users/igm/dotfiles";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dotfiles-private-raw = {
@@ -12,26 +12,25 @@
     };
   };
 
-  outputs = { igm, dotfiles-private-raw, nixpkgs, ... }:
+  outputs =
+    {
+      igm,
+      dotfiles-private-raw,
+      ...
+    }:
     let
-      private = igm.lib.mkPrivate {
-        inherit (nixpkgs) lib;
-        raw = import dotfiles-private-raw;
-      };
       mkSystem = igm.lib.mkDarwinSystem;
     in
     {
       darwinConfigurations."ian-mbp-intel" = mkSystem {
-        computerName = "Ian’s Macbook Pro Intel";
+        computerName = "Ian's Macbook Pro Intel";
         hostName = "ian-mbp-intel";
-        additionalOverlays = private.overlays;
         modules = [ dotfiles-private-raw.darwinModules.default ];
       };
       darwinConfigurations."ian-mbp-2022" = mkSystem {
         isM1 = true;
-        computerName = "Ian’s Macbook Pro 2022";
+        computerName = "Ian's Macbook Pro 2022";
         hostName = "ian-mbp-2022";
-        additionalOverlays = private.overlays;
         modules = [ dotfiles-private-raw.darwinModules.default ];
       };
     };
