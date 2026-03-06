@@ -18,13 +18,6 @@
         inherit (nixpkgs) lib;
         raw = import dotfiles-private-raw;
       };
-      hmSecrets = {
-        home-manager.users.igm = {
-          imports = [
-            dotfiles-private-raw.homeModules.default
-          ];
-        };
-      };
       mkSystem = igm.lib.mkDarwinSystem;
     in
     {
@@ -32,14 +25,14 @@
         computerName = "Ian’s Macbook Pro Intel";
         hostName = "ian-mbp-intel";
         additionalOverlays = private.overlays;
-        modules = private.modules ++ [ hmSecrets ];
+        modules = [ dotfiles-private-raw.darwinModules.default ];
       };
       darwinConfigurations."ian-mbp-2022" = mkSystem {
         isM1 = true;
         computerName = "Ian’s Macbook Pro 2022";
         hostName = "ian-mbp-2022";
         additionalOverlays = private.overlays;
-        modules = private.modules ++ [ hmSecrets ];
+        modules = [ dotfiles-private-raw.darwinModules.default ];
       };
     };
 }
